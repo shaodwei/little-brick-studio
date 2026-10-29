@@ -1,0 +1,59 @@
+const basicEnglish={
+tower:['Little tower','Aligned stacking','What changes when the base gets wider?',[
+['Start with a base','Lay one 2 × 4 brick flat on the table.','Studs face up; use a flat surface.'],['Match four studs','Clip one 2 × 2 brick onto the left half of the base.','Press gently at all four corners.'],['Add another layer','Stack another square directly above the first.','Check from the side: is the tower straight?'],['Cap the tower','Add one more square to finish your four-color tower.','Hold the base with one hand as you press.']]],
+wall:['Bonded wall','Staggered joints','Remove the top long brick. Are the two sides still joined?',[
+['Two squares side by side','Put two square bricks together in a row.','Keep the edges touching.'],['Bridge the joint','Clip one 2 × 4 brick across both squares.','The upper brick crosses the lower joint.'],['Split the next layer','Add two squares, one on each half.','Match the shape; any color works.'],['Join the wall','Add another long brick across both squares.','Gently check whether the wall stays together.']]],
+corner:['Corner wall','Right angles and bonding','Can another corner turn this wall into a courtyard?',[
+['Start one side','Lay down one 2 × 4 brick.','Point its long edge left to right.'],['Turn the corner','Place a square behind the left half, touching the long brick.','Match the edges without a gap.'],['Lock the corner','Turn a long brick by 90° and clip it across the two bricks on the left.','It must connect both lower bricks.'],['Fill the right side','Put a square on the upper right.','The top view should show an L shape.']]],
+bridge:['Little bridge','Supports and spans','Can a finger fit through the space under the bridge?',[
+['Place two piers','Place two squares with a two-stud-wide gap between them.','Use a long brick to check spacing before connecting.'],['Raise both piers','Stack one square on each pier.','Both piers must be equally tall.'],['Add the bridge deck','Center one long brick across the gap, overlapping each pier by one stud column.','Hold both piers and press gently; both ends must attach.']]],
+duck:['Little duck','Overlap and overhang','Change the beak color, then give your duck a name.',[
+['Lay the duck’s base','Lay one 2 × 4 brick left to right.','Use any color; the long edge runs sideways.'],['Build the body','Stack another long brick directly on the base.','Keep all outer edges aligned.'],['Add a neck','Clip a square onto the left half of the body.','The right half becomes the duck’s back.'],['Reach out with a beak','Use one long brick: half attaches to the neck and half extends to the left.','Support the overhang from below as you press.'],['Add a head','Place a square on the right half of the beak, directly over the neck.','An eye-print brick is optional; no extra tiny parts are needed.']]],
+giraffe:['Little giraffe','Height and silhouette','Does a shorter neck make it look like another animal?',[
+['Stand on two feet','Place two squares with a one-stud-wide gap.','Set the spacing before stacking.'],['Join the body','Place a long brick from the left edge of the left foot, clipping onto one stud column of the right foot.','The body must connect to both feet.'],['Start the neck','Add a square on the left half of the body.','Hold the body while pressing.'],['Grow the neck','Stack another square directly above.','Keep the neck aligned.'],['Make a head','Attach half a long brick to the neck and extend the other half to the right.','This is a simplified side silhouette. Remove one neck layer if it wobbles.']]],
+dog:['Little dog','Separate supports, joined body','Move the head: which way does your dog face now?',[
+['Place front and back feet','Put two squares down with a one-stud-wide gap.','Align the feet in the same direction.'],['Join a long body','Connect the feet with a long brick, starting at the left edge of the left foot.','Only one stud column on the right foot connects to the body.'],['Add a head','Place a square on the left half of the body.','Point to the head and the back.']]],
+house:['Little house','Posts, doorway and roof','Add a corner wall beside the doorway to make a small yard.',[
+['Lay a foundation','Put two long bricks end to end in an eight-stud-long row.','This is a front silhouette of a house.'],['Leave a doorway','Place squares on stud columns 2–3 and 6–7, counting from the left.','Leave two stud columns between the posts.'],['Raise the doorway','Add a square to each post.','Keep both sides the same height.'],['Add a lintel','Center a long brick above the doorway, overlapping each post by one stud column.','The beam joins both posts.'],['Top the roof','Place a square in the center of the lintel for a stepped roof.','No special window or roof piece is required.']]],
+castle:['Twin towers','Symmetry and bonding','Would you like matching towers, or one tall and one short?',[
+['Set two bases','Place two squares side by side.','Each square starts one tower base.'],['Connect the wall','Use a long brick to join the two bases.','It crosses the seam below.'],['Start two towers','Place a square at each end, shifting each outward by one stud column.','Each tower still clips onto a stud column on the wall.'],['Add tower caps','Add another square to each tower.','Support the lower parts; do not keep stacking this narrow design higher.']]],
+chair:['Little chair','From a flat seat to a backrest','Put two chairs together, then build a table.',[
+['Make a low base','Lay one long brick down as the chair base.','This chair has a solid base.'],['Add a seat','Stack another long brick directly on it.','The seat should be level.'],['Start the backrest','Place a square on the left half of the seat.','Keep the right half clear for sitting.'],['Raise the backrest','Stack another square on the left.','Rotate the model and find the seat and backrest.']]],
+stairs:['Little steps','Stepping back layer by layer','Walk your fingers up the steps, then back down.',[
+['Lay the bottom step','Place a long brick and a square end to end.','The base is six stud columns long.'],['Step back two columns','Place a long brick starting at the third stud column from the left.','It leaves a step on the left and joins the lower bricks.'],['Step back again','Add a square at the far right.','Three levels, each set back by two stud columns.']]],
+tree:['Little tree','Centering and balance','What season could a red tree crown represent?',[
+['Lay the grass','Use a long brick for a wide base.','A wider base helps support the tree.'],['Center the trunk','Place a square on the middle two stud columns of the base.','Leave one stud column visible at each side.'],['Spread a crown','Center a long brick on the trunk.','Both ends extend by one stud column.'],['Add a treetop','Put a square in the center of the crown.','Let go gently and check that the tree stands.']]]
+};
+for(const l of lessons){const [name,skill,prompt,steps]=basicEnglish[l.id];l.level='foundation';l.name=pair(name,l.name);l.skill=pair(skill,l.skill);l.prompt=pair(prompt,l.prompt);l.steps.forEach((s,i)=>{s.title=pair(steps[i][0],s.title);s.text=pair(steps[i][1],s.text);s.check=pair(steps[i][2],s.check);s.module=pair('Core structure','基础结构')})}
+const partEnglish=[
+['Narrow and tall bricks','Two-stud orange piece: size unconfirmed','The orange piece at the top may be narrow or tall. Check whether a rear stud row is hidden, then compare its height. It is not required in these lessons.'],
+['2 × 2 square brick','Visible in the photo','Two rows of two studs. Useful for legs, posts, heads and tree trunks. Sort by shape before color.'],
+['2 × 4 long brick','Rectangular bricks visible; count studs to confirm','Two rows of four studs. It can join two squares by crossing their seam.'],
+['Longer bricks','A red long piece is visible at lower left','Useful for bases and bridge decks. The photo does not establish its exact length; count the studs. Our current builds do not require it.'],
+['Baseplate','Green baseplate visible below the tower','A baseplate holds separate feet and walls while building. It is optional and is not counted in the lesson inventory.'],
+['Door and window pieces','Visible on the front of the tower','Check their height and connector positions on the actual pieces. The gabled house uses a 4 × 2 × 3 frame; compare yours first.'],
+['Printed bricks','Eyes, numbers and pictures visible','Treat a printed brick like a plain brick of the same shape. An animal does not need printed eyes to have a recognizable body.'],
+['Slopes and shaped pieces','Possible slopes; exact parts unconfirmed','The green top piece and curved red piece need closer inspection. Keep them separately for later variations.'],
+['Vehicle and scenery pieces','Visible in the background; not inventoried','Wheels, vehicle pieces and tree parts appear in the background. They may belong to other sets. The bus and locomotive need a matching wheeled base. Check its top stud grid before starting.']
+];
+partTypes[8].desc='巴士和火车头需要符合尺寸的轮式底盘，请先核对顶面凸点阵列。照片中的轮子和车辆配件不能据此确定尺寸。';
+partTypes.forEach((p,i)=>{p.name=pair(partEnglish[i][0],p.name);p.tag=pair(partEnglish[i][1],p.tag);p.desc=pair(partEnglish[i][2],p.desc)});
+const library=[...advanced,...lessons];
+const UI={
+brand:pair('Little Builders','小小搭建家'),tagline:pair('Bigger ideas, one brick at a time','大一点的想象，一块一块搭出来'),
+parts:pair('Know your bricks','认识积木'),build:pair('Build together','一起搭建'),guide:pair('Grown-up guide','家长指南'),
+choose:pair('Choose a build','选择一个作品'),all:pair('All','全部'),structure:pair('Skills','结构'),animal:pair('Animals','动物'),building:pair('Buildings','建筑'),object:pair('Objects','物品'),
+advanced:pair('Growing builders','进阶作品'),foundation:pair('Foundation skills','基础练习'),builder:pair('Builder','进阶'),challenge:pair('Challenge','挑战'),everything:pair('All levels','全部难度'),
+bricks:pair('bricks','块'),steps:pair('steps','步'),done:pair('Built','已搭过'),iso:pair('3D','立体'),top:pair('Top','俯视'),left:pair('Rotate left','向左旋转'),right:pair('Rotate right','向右旋转'),reset:pair('Reset view','重置视角'),
+preview:pair('Finished build · explore before you begin','成品预览 · 先观察，再开始'),directions:pair('Directions refer to the reset view. Front = the near y-edge.','方向以重置视角为准，前方指图中 y 轴近侧。'),
+plan:pair('Your next building adventure','准备一场新的搭建'),prepare:pair('Gather your bricks','准备积木'),check:pair('Check the connection','检查连接'),before:pair('Before you build','搭建之前'),
+standard:pair('Use standard-height 2 × 2 and 2 × 4 bricks. Any colors work. Counts are per build; reuse pieces between projects.','使用普通高度的 2 × 2 方砖和 2 × 4 长砖，颜色可以替换。数量按单个作品计算，不同作品可以拆开复用。'),
+lift:pair('Lift new pieces to see the joins','抬起新积木，查看连接'),start:pair('Start building','开始搭建'),next:pair('Next step','下一步'),previous:pair('Previous','上一步'),ready:pair('Preparation','准备'),finish:pair('I built it!','我搭好啦'),overview:pair('Model & inventory','成品与清单'),print:pair('All steps / print','全部步骤 / 打印'),
+square:pair('square brick','方砖'),long:pair('long brick','长砖'),make:pair('Make it your own','改成你的版本'),
+rail:pair('Build in sections. Rotate to check the hidden side. Match shapes, not colors.','分段搭建，旋转检查背面。先匹配形状，颜色可以自由选。'),
+saved:pair('Built! Try your own variation next. Saved on this device.','搭好啦！接下来试试改造，已在本机记录。'),unsaved:pair('Built! Your browser could not save this progress.','搭好啦！当前浏览器无法保存进度。'),
+close:pair('Back to building','返回搭建'),printnow:pair('Print / save PDF','打印 / 保存 PDF'),printtip:pair('Use your system browser for printing or saving a PDF.','请用系统浏览器打印或保存 PDF。'),
+limit:pair('Original grid diagrams. Physical fit and stability still need hands-on testing.','原创网格图解，实物扣合与稳定性仍需试搭确认。'),
+footer:pair('Build, rebuild, imagine together.','一起搭建、拆解，再想象。'),unofficial:pair('Independent tutorials · not an official LEGO product','非 LEGO 官方教程 · 颜色可以自由替换'),
+phases:pair('Build sections','搭建分段'),focus:pair('Show only this step’s pieces','只看本步新积木'),normal:pair('Show whole assembly','显示累计模型'),front:pair('Front','前方'),back:pair('Back','后方')
+};
